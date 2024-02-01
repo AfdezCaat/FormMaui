@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FormMaui.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label Text="Datos del Cliente"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Nombre:" x:Name="labelNombre" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="0" />
+                <Entry x:Name="textNombre" Placeholder="Nombre" Grid.Column="0" Grid.Row="1"/>
+
+                <Label Text="NIF:" VerticalOptions="CenterAndExpand" Grid.Column="1" Grid.Row="0" />
+                <Entry x:Name="textNif" Placeholder="NIF" Grid.Column="1" Grid.Row="1"/>
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Dirección:" x:Name="labelDireccion" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="0" />
+                <Entry x:Name="textDireccion" Placeholder="Dirección" Grid.Column="0" Grid.Row="1" TextChanged="cambiarTextoLabel" />
+                
+                <Label Text="Cliente Habitual:" VerticalOptions="CenterAndExpand" Grid.Column="1" Grid.Row="0" />
+                <Entry x:Name="textClienteH" Placeholder="Cliente" Grid.Column="1" Grid.Row="1" />
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Tipo de IVA:" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="0" />
+                <StackLayout Orientation="Horizontal"  Grid.Column="0" Grid.Row="1">
+                    <RadioButton x:Name="radioIva1" Content="5%" />
+                    <RadioButton x:Name="radioIva2" Content="15%" />
+                    <RadioButton x:Name="radioIva3" Content="17%" />
+                </StackLayout>
+                
+                <Label Text="País:" VerticalOptions="CenterAndExpand" Grid.Column="1" Grid.Row="0" />
+                <Picker x:Name="pais" Grid.Column="1" Grid.Row="1">
+                    <Picker.Items>
+                        <x:String>España</x:String>
+                        <x:String>Alemania</x:String>
+                        <x:String>Italia</x:String>
+                        <x:String>Francia</x:String>
+                        <x:String>Portugal</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Grid>
+
+           
+
+
+            <Button
+                x:Name="ModificarBtn"
+                Text="Enviar" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="ModificarBtn_Clicked"
+                HorizontalOptions="Start"  Background="#686868" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
